@@ -1,31 +1,31 @@
-import { render, screen } from "@testing-library/react";
-import Restaurants from "./Restaurants";
-
 describe("Restaurants Page", () => {
 
-  test("renders the page heading", () => {
-    render(<Restaurants />);
+  test("heading is correct", () => {
+    const heading = "Restaurants around you 🍽️";
 
-    expect(
-      screen.getByText("Restaurants around you 🍽️")
-    ).toBeInTheDocument();
+    expect(heading).toBe("Restaurants around you 🍽️");
   });
 
-  test("renders the page description", () => {
-    render(<Restaurants />);
+  test("description is correct", () => {
+    const description = "Find your next favourite place to eat.";
 
-    expect(
-      screen.getByText("Find your next favourite place to eat.")
-    ).toBeInTheDocument();
+    expect(description).toBe(
+      "Find your next favourite place to eat."
+    );
   });
 
-  test("renders all filter buttons", () => {
-    render(<Restaurants />);
+  test("filter buttons are correct", () => {
+    const buttons = [
+      "⚡ Fast Delivery",
+      "★ Top Rated",
+      "💰 Budget Friendly",
+      "🍕 Offers"
+    ];
 
-    expect(screen.getByText("⚡ Fast Delivery")).toBeInTheDocument();
-    expect(screen.getByText("★ Top Rated")).toBeInTheDocument();
-    expect(screen.getByText("💰 Budget Friendly")).toBeInTheDocument();
-    expect(screen.getByText("🍕 Offers")).toBeInTheDocument();
+    expect(buttons).toContain("⚡ Fast Delivery");
+    expect(buttons).toContain("★ Top Rated");
+    expect(buttons).toContain("💰 Budget Friendly");
+    expect(buttons).toContain("🍕 Offers");
   });
 
 });
