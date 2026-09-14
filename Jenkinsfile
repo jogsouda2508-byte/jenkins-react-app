@@ -24,7 +24,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'No automated tests configured yet.'
+                bat 'npm test -- --runInBand'
             }
         }
 
